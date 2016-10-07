@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Lab_4.0</display-name>
+
+<!-- 
+		Following element defines a reference lookup name to an external resource. 
+		This external resource is type of javax.sql.DataSource.  
+		The configuration of this resource is done in META-INF\context.xml  			
+-->
+
+<!-- Don't modify  <resource-ref> element -->
+	
+	<resource-ref>
+		<res-ref-name>jdbc/ShoppingAppDataSource</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+<!-- Following element makes com.seed.MyContextListener as listener for this web app context-->
+
+<!-- Don't modify  <listener> element -->
+<listener>
+	<listener-class>com.seed.MyContextListener </listener-class>
+</listener>
+	
+<!-- Make categories.html as welcome page for this web app context-->
+<welcome-file-list>
+    <welcome-file>categories.html</welcome-file>
+</welcome-file-list>
+<!-- Make container aware that "com.seed.StoreCartDetailsServlet" is a servlet named as "StoreCartDetailsServlet" -->
+<servlet>
+  <servlet-name>StoreCartDetailsServlet</servlet-name>
+  <servlet-class>com.seed.StoreCartDetailsServlet</servlet-class>
+</servlet>  
+<!-- Provide URL mapping "/storeDetails" for the servlet "StoreCartDetailsServlet"--> 
+<servlet-mapping>
+         <servlet-name>StoreCartDetailsServlet</servlet-name>
+         <url-pattern>/storeDetails</url-pattern>
+</servlet-mapping>
+<!-- Make container aware that "com.seed.DisplayCartDetailsServlet" is a servlet named as "DisplayCartDetailsServlet" -->
+<servlet>
+  <servlet-name>DisplayCartDetailsServlet</servlet-name>
+  <servlet-class>com.seed.DisplayCartDetailsServlet</servlet-class>
+</servlet>    
+<!-- Don't provide URL mapping for the servlet "DisplayCartDetailsServlet"--> 
+</web-app>

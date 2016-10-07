@@ -1,0 +1,9 @@
+package com.cg;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+@WebServlet("/showHeaders")
+public class headerServlet extends HttpServlet{
+	
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 packages to &apos;EMS3/src&apos;&#x0D;&#x0A;- Original project: &apos;EMS2&apos;&#x0D;&#x0A;- Destination element: &apos;EMS3/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     EMS2/src/com.flp.ems.service&#x0D;&#x0A;     EMS2/src/com.flp.ems.util&#x0D;&#x0A;     EMS2/src/com.flp.ems.view&#x0D;&#x0A;     EMS2/src/com.flp.ems.dao&#x0D;&#x0A;     EMS2/src/com.flp.ems.domain" description="Copy packages" destination="=EMS3/src" element1="/src&lt;com.flp.ems.service" element2="/src&lt;com.flp.ems.util" element3="/src&lt;com.flp.ems.view" element4="/src&lt;com.flp.ems.dao" element5="/src&lt;com.flp.ems.domain" flags="589830" fragments="5" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1475744854078" version="1.0"/>
+</session>

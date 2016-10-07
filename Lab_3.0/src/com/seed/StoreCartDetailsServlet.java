@@ -52,7 +52,7 @@ public class StoreCartDetailsServlet extends HttpServlet{
 //		TODO:7	if the user clicks "Check Out" in "bookCatelogue.html", 
 //		then redirect web-client to resource named as "displayDetails"
 			 else
-			response.sendRedirect("displayDetails");
+				 response.sendRedirect("displayDetails");
 //		Add mapping for resource "displayDetails" in WEB.XML
 
 	}

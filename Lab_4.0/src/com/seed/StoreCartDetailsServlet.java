@@ -52,8 +52,7 @@ public class StoreCartDetailsServlet extends HttpServlet{
 			 dispatcher = getServletContext().getNamedDispatcher("DisplayCartDetailsServlet");
 			 if(dispatcher==null)
 				 System.out.println("null");
-//			 System.out.println(dispatcher.toString());
-//			 dispatcher.forward(request, response);
+			 dispatcher.forward(request, response);
 		 }
 	}
 	@Override

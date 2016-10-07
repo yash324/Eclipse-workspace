@@ -13,7 +13,7 @@ import com.vim.dao.CarDAO;
 import com.vim.dto.CarDTO;
 import com.vim.util.ServiceLocator;
 import com.vim.util.ServiceLocatorException;
-
+//todos complete
 //TODO 1 Import appropriate classes based on following TODOs
 //Follow TODOs (if available)
 /**
@@ -62,7 +62,6 @@ public class JDBCCarDAO implements CarDAO {
 				connection.setAutoCommit(false);
 				// Create a PreparedStatement using insertQuery
 				PreparedStatement insertStat = connection.prepareStatement(insertQuery);
-
 				// Set the parameters of the PreparedStatement
 				insertStat.setString(1, car.getMake());
 				insertStat.setString(2, car.getModel());
@@ -102,6 +101,7 @@ public class JDBCCarDAO implements CarDAO {
 				// TODO 7
 				connection = datasource.getConnection();
 				// Get a connection using datasource
+				connection.setAutoCommit(false);
 				// Start the JDBC transaction
 				// Create a PreparedStatement using deleteQuery
 				PreparedStatement deleteStat = connection.prepareStatement(deleteQuery);
@@ -185,12 +185,22 @@ public class JDBCCarDAO implements CarDAO {
 
 		Connection connection = null;
 		String selectQuery = "select * from CAR";
-
+		ResultSet rs = null;
 		try {
 			try {
 				// TODO 9
 				connection = datasource.getConnection();
 				PreparedStatement selectStat = connection.prepareStatement(selectQuery);
+				rs = selectStat.executeQuery();
+				while(rs.next())
+				{
+					CarDTO car = new CarDTO();
+					car.setMake(rs.getString("MAKE"));
+					car.setModel(rs.getString("MODEL"));
+					car.setModelYear(rs.getString("MODEL_YEAR"));
+					car.setId(rs.getInt("ID"));
+					carList.add(car);
+				}
 				// Get a connection using datasource
 				// Don't start the JDBC transaction
 				// Create a Statement using selectQuery
@@ -221,7 +231,6 @@ public class JDBCCarDAO implements CarDAO {
 		String selectQuery = "select * from CAR where id=?";
 		CarDTO car = new CarDTO();
 		Connection connection = null;
-
 		try {
 			try {
 				connection = datasource.getConnection();

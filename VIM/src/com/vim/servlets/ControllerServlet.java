@@ -1,6 +1,8 @@
 package com.vim.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.vim.util.DBUtility;
 import com.vim.dao.CarDAO;
+import com.vim.dto.CarDTO;
 
 //TODO 1 Import appropriate classes
 
@@ -57,11 +60,12 @@ public class ControllerServlet extends HttpServlet
         String actionName = request.getParameter(ACTION_KEY);
         String destinationPage = null; 
         CarDAO carDAO = DBUtility.getCarDAO();
-        
+        List<CarDTO> carList;
         // perform action
         if(VIEW_CAR_LIST_ACTION.equals(actionName))
         {            
             //TODO 4 
+        	carList = carDAO.findAll();
 			//Use carDao to get the list of the cars
 			//Set the list in request with attribute name as 'carList'
 			//Set the destination page to carList.jsp

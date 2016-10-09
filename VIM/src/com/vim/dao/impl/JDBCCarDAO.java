@@ -141,11 +141,12 @@ public class JDBCCarDAO implements CarDAO {
 		// TODO Auto-generated method stub
 		String updateQuery = "update car set make=?,model=?,model_year=? where id=?";
 		Connection connection = null;
-
+		
 		try {
 			try {
 				// TODO 8
 				connection = datasource.getConnection();
+				connection.setAutoCommit(false);
 				PreparedStatement updateStat = connection.prepareStatement(updateQuery);
 				updateStat.setString(1, car.getMake());
 				updateStat.setString(2, car.getModel());

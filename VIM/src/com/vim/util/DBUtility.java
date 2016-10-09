@@ -26,5 +26,4 @@ public class DBUtility {
 		return car; 
 		//TODO 3 Implement a method getCarDAO which returns dao created in TODO 1
 	}
-	
 }

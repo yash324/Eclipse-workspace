@@ -86,7 +86,7 @@ public class ControllerServlet extends HttpServlet
         else if(EDIT_CAR_ACTION.equals(actionName))
         {
 			//TODO 6 
-        	int id = Integer.parseInt(request.getParameter("id"));
+        	int id = Integer.parseInt(request.getParameter("empid"));
 			//Get the car id from request, with parameter name as 'id'
         	CarDTO car = carDAO.findById(id);
 			//Find the respective car (CarDTO) from carDAO using appropriate API of DAO
@@ -104,7 +104,7 @@ public class ControllerServlet extends HttpServlet
         	car.setMake(request.getParameter("make"));
         	car.setModel(request.getParameter("model"));
         	car.setModelYear(request.getParameter("modelYear"));
-        	int id = Integer.parseInt(request.getParameter("id"));
+        	int id = Integer.parseInt(request.getParameter("empid"));
         	car.setId(id);
 			//TODO If it is a new car then invoke create api of DAO else update api
         	if(id==-1)
@@ -121,7 +121,7 @@ public class ControllerServlet extends HttpServlet
         else if(DELETE_CAR_ACTION.equals(actionName))
         {
             //TODO 8 
-			String[] ids = request.getParameterValues("id");
+			String[] ids = request.getParameterValues("empid");
         	//Get the ids of all cars to be deleted from request
         	
 			//Use appropriate api of DAO to delete all cars
@@ -144,6 +144,5 @@ public class ControllerServlet extends HttpServlet
 		//appropriate destination page set in above if else blocks depending on action.
         RequestDispatcher r = request.getRequestDispatcher(destinationPage);
         r.forward(request, response);
-        
     }
 }

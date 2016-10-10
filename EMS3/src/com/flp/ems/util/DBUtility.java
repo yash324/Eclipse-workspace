@@ -1,9 +1,9 @@
 package com.flp.ems.util;
-import com.flp.ems.domain.Employee;
+import com.flp.ems.service.EmployeeServiceImpl;
 public class DBUtility {
-	private static Employee emp = new Employee();
-	public static Employee getEmployee()
+	private static EmployeeServiceImpl empService = new EmployeeServiceImpl();
+	public static EmployeeServiceImpl getEmployeeService()
 	{
-		return emp; 
+		return empService; 
 	}
 }

@@ -183,7 +183,6 @@ public class JDBCCarDAO implements CarDAO {
 	 */
 	public List<CarDTO> findAll() {
 		List<CarDTO> carList = new ArrayList<CarDTO>();
-
 		Connection connection = null;
 		String selectQuery = "select * from CAR";
 		ResultSet rs = null;
@@ -239,12 +238,13 @@ public class JDBCCarDAO implements CarDAO {
 				PreparedStatement selectStatement = connection.prepareStatement(selectQuery);
 				selectStatement.setInt(1, id);
 				ResultSet result = selectStatement.executeQuery();
-				result.next();
-
-				car.setId(result.getInt("id"));
-				car.setMake(result.getString("make"));
-				car.setModel(result.getString("model"));
-				car.setModelYear(result.getString("MODEL_YEAR"));
+				if(result.next())
+				{
+					car.setId(result.getInt("id"));
+					car.setMake(result.getString("MAKE"));
+					car.setModel(result.getString("MODEL"));
+					car.setModelYear(result.getString("MODEL_YEAR"));
+				}
 			} finally {
 				if (connection != null)
 					connection.close();

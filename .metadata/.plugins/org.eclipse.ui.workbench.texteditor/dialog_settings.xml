@@ -8,14 +8,14 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="emp"/>
+			<item value="empid"/>
 			<item value="getdata"/>
 			<item value="system"/>
 			<item value="sysout"/>
-			<item value="empid"/>
 			<item value="getaddress"/>
 			<item value="addEmp"/>
 			<item value="id"/>
-			<item value="request.set"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Emp"/>

@@ -12,11 +12,8 @@
 
 <jee:jndi-lookup id="VIMDataSource" jndi-name="java:/comp/env/jdbc/VIMDataSource" expected-type="javax.sql.DataSource" />
 
-<bean id="myJDBCDAO" class="com.vim.dao.impl.JDBCCarDAO" scope = "prototype">
+<bean id="myJDBCDAO" class="com.vim.dao.impl.JDBCCarDAO" scope = "singleton">
 <constructor-arg index="0" ref="VIMDataSource"/>
 </bean>
 
-<bean id="dbUtil" class = "com.vim.util.DBUtility">
-<property name="carDAO" ref = "myJDBCDAO"></property>
-</bean>
 </beans>

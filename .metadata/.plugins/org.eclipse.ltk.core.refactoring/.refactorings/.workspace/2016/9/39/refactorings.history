@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Lab3&apos;" deleteContents="true" description="Delete resource &apos;Lab3&apos;" element1="/Lab3" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1474370327349"/>&#x0A;<refactoring comment="Copy 0 source folders to &apos;Lab2&apos;&#x0D;&#x0A;- Destination element: &apos;Lab2&apos;" description="Copy source folders" destination="=Lab2" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="0" stamp="1474370663150" version="1.0"/>
-</session>

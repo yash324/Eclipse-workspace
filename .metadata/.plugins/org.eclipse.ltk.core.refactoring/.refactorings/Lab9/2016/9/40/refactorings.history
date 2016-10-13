@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;handlerHashTree&apos; to &apos;HandlerHashMap&apos;&#x0D;&#x0A;- Original project: &apos;Lab9&apos;&#x0D;&#x0A;- Original element: &apos;handlerHashTree&apos;&#x0D;&#x0A;- Renamed element: &apos;HandlerHashMap&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;handlerHashTree&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{handlerHashTree.java[handlerHashTree" matchStrategy="1" name="HandlerHashMap" qualified="false" references="true" similarDeclarations="false" stamp="1474884299503" textual="false" version="1.0"/>
-</session>

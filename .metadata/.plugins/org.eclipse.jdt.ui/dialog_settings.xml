@@ -59,7 +59,11 @@
 		<item value="false" key="RemoveFinal"/>
 	</section>
 	<section name="JavaElementSearchActions">
+		<list key="lastUsedWorkingSetNames1">
+			<item value="vim"/>
+		</list>
 		<list key="lastUsedWorkingSetNames0">
+			<item value="ems3"/>
 			<item value="vim"/>
 		</list>
 	</section>
@@ -173,13 +177,27 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="1" key="pageIndex"/>
+		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="JavaSearchPage">
-		<item value="1" key="HISTORY_SIZE"/>
+		<item value="2" key="HISTORY_SIZE"/>
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="11" key="INCLUDE_MASK"/>
 		<section name="HISTORY0">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="2" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="getDataSource" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+				<item value="ems3"/>
+				<item value="vim"/>
+			</list>
+		</section>
+		<section name="HISTORY1">
 			<item value="false" key="isCaseSensitive"/>
 			<item value="" key="javaElement"/>
 			<item value="2" key="scope"/>

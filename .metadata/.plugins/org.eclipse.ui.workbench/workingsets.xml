@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1475837420929_1" label="vim" name="vim">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/VIM" type="4"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1475837420929_1" label="vim" name="vim"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1476244597387_2" label="ems3" name="ems3">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EMS3" type="4"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474345522815_0" label="Window Working Set" name="Aggregate for window 1474345522814"/>
 </workingSetManager>

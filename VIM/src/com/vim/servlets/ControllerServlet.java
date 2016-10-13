@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 import com.vim.util.DBUtility;
 import com.vim.dao.CarDAO;
+import com.vim.dao.impl.JDBCCarDAO;
 import com.vim.dto.CarDTO;
 
 //TODO 1 Import appropriate classes
@@ -59,7 +63,8 @@ public class ControllerServlet extends HttpServlet
             throws ServletException, IOException {
         String actionName = request.getParameter(ACTION_KEY);
         String destinationPage = null; 
-        CarDAO carDAO = DBUtility.getCarDAO();
+        WebApplicationContext appContext = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getSession().getServletContext());
+        CarDAO carDAO = appContext.getBean("myJDBCDAO", JDBCCarDAO.class);
         List<CarDTO> carList;
         // perform action
         if(VIEW_CAR_LIST_ACTION.equals(actionName))
@@ -86,7 +91,7 @@ public class ControllerServlet extends HttpServlet
         else if(EDIT_CAR_ACTION.equals(actionName))
         {
 			//TODO 6 
-        	int id = Integer.parseInt(request.getParameter("empid"));
+        	int id = Integer.parseInt(request.getParameter("id"));
 			//Get the car id from request, with parameter name as 'id'
         	CarDTO car = carDAO.findById(id);
 			//Find the respective car (CarDTO) from carDAO using appropriate API of DAO
@@ -104,7 +109,7 @@ public class ControllerServlet extends HttpServlet
         	car.setMake(request.getParameter("make"));
         	car.setModel(request.getParameter("model"));
         	car.setModelYear(request.getParameter("modelYear"));
-        	int id = Integer.parseInt(request.getParameter("empid"));
+        	int id = Integer.parseInt(request.getParameter("id"));
         	car.setId(id);
 			//TODO If it is a new car then invoke create api of DAO else update api
         	if(id==-1)

@@ -14,9 +14,13 @@
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
 			<item value="D:\Dev\Demos\eclipse-workspace"/>
 			<item value=""/>
+			<item value="D:\Dev\Demos\eclipse-workspace\Lab_7.0"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
+			<item value="\\DIN51001873\dev\demo\spring-core-2.zip"/>
+			<item value="\\DIN51001873\dev\demo\demo-spring-core.zip"/>
+			<item value="\\DIN51001873\dev\demo\Dependencies.zip"/>
 			<item value="\\DIN51001873\dev\demo\demo-ds.zip"/>
 			<item value="\\DIN51001873\dev\demo\Servlet-JSPEclipse-workspaceTODOS.zip"/>
 			<item value="\\DIN51001873\dev\demo\demo-streams-io-2.zip"/>

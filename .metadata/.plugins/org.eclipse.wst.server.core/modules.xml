@@ -3,5 +3,7 @@
   <module moduleId="org.eclipse.jst.jee.server:Lab_3.0" serverId="Tomcat v8.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Lab_4.0"/>
   <module moduleId="org.eclipse.jst.jee.server:Lab_1.0" serverId="Tomcat v8.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:VIM"/>
+  <module moduleId="org.eclipse.jst.jee.server:VIM" serverId="Tomcat v8.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:EMS3" serverId="Tomcat v8.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Lab_7.0" serverId="Tomcat v8.0 Server at localhost"/>
 </modules>

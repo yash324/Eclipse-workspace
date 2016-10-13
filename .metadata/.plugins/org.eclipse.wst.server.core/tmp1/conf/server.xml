@@ -124,16 +124,8 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\Dev\Demos\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\Dev\Demos\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Lab_4.0" path="/Lab_4.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_4.0">
-
-<!-- 
-<Resource name="jdbc/VIMDataSource" auth="Container"
-              type="javax.sql.DataSource" maxActive="100" 
-              maxIdle="30" maxWait="10000"
-              driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://127.0.0.1:3306/test"/> 
-               -->
-              
+      <Context docBase="D:\Dev\Demos\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\Dev\Demos\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\VIM" path="/VIM" reloadable="true" source="org.eclipse.jst.jee.server:VIM">
+         
 <!-- 
 		Following element defines a reference lookup name to an external resource. 
 		This external resource is type of javax.sql.DataSource.  
@@ -141,7 +133,18 @@
 		Don't forget to add required jdbc driver(jar) in WEB-INF\lib.  			
 -->
 
-<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/ShoppingAppDataSource" type="javax.sql.DataSource" url="jdbc:mysql://127.0.0.1:3306/test"/> 
+<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/VIMDataSource" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test"/>
+              
+<!--
+This resource is for ORACLE DATABASE. 
+<Resource name="jdbc/VIMDataSource" auth="Container"
+              type="javax.sql.DataSource" maxActive="100" 
+              maxIdle="30" maxWait="10000"
+              username="VIM" password="seed123" 
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@localhost:1521:XE"/> 
+   -->      
+                    
 </Context></Host>
     </Engine>
   </Service>

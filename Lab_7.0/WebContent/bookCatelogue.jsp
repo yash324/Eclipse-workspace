@@ -16,11 +16,14 @@
 <form action="storeWishListDetails.jsp" method="post">
 
 	<h1>Select books</h1>
-
-<%-- TODO:1 Use JSTL action (forEach) and EL EXPRESSIONS to display product details from 
-		scoped variable "productIds" and "entries.products" as HTML CHECKBOXES
---%>
-
+<c:forEach items="${entries.products}" var="prod">
+      <tr>
+      <td><input type="checkbox" name="id" value="${prod.key}"></td>
+      <td>${prod.value.name}</td>
+      <td>${prod.value.price}</td>
+      </tr>
+      <br/>
+</c:forEach>
 	<br/>
 	<input type="submit" value="Add to Wish List & shop more?" name="addToList"/>
 	<input type="submit" value="Check Out" name="checkout"/>

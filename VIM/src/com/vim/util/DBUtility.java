@@ -15,15 +15,18 @@ import com.vim.dao.impl.JDBCCarDAO;
  *
  */
 public class DBUtility {
-	private static CarDAO car = new JDBCCarDAO();
+	private static CarDAO carDAO;
 	//TODO 2 Declare a static reference dao of type CarDAO pointing to JDBCCarDAO instance
 		
 	/**
 	 * @return	CarDAO a factory for creating DAO 
 	 */
+	public static void setCarDAO(CarDAO carDAO) {
+		DBUtility.carDAO = carDAO;
+	}
 	public static CarDAO getCarDAO()
 	{
-		return car; 
+		return carDAO; 
 		//TODO 3 Implement a method getCarDAO which returns dao created in TODO 1
 	}
 }

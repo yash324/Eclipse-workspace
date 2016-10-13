@@ -29,6 +29,11 @@ public class MyContextListener implements ServletContextListener{
 //		Assign scoped variable names(attribute) for ids in product repository in APPLICATION_SCOPE
 		String productIdsAttributeID = "productIds";
 		application.setAttribute(productIdsAttributeID, productEntries.keySet());
+		for(Integer key:productEntries.keySet())
+		{
+			Product p = productEntries.get(key);
+			System.out.println(p.getId() +" " +  p.getName() +" " + p.getPrice());
+		}
 	}
 	
 	@Override

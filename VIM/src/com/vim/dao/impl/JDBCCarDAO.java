@@ -9,10 +9,14 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 import com.vim.dao.CarDAO;
 import com.vim.dto.CarDTO;
 import com.vim.util.ServiceLocator;
 import com.vim.util.ServiceLocatorException;
+
 //todos complete
 //TODO 1 Import appropriate classes based on following TODOs
 //Follow TODOs (if available)
@@ -32,14 +36,16 @@ public class JDBCCarDAO implements CarDAO {
 	// encapsulation principle
 	DataSource datasource = null;
 
-	public JDBCCarDAO() {
-		datasource = ServiceLocator.getDataSource("jdbc/VIMDataSource");
+	public JDBCCarDAO(DataSource datasource) {
+		this.datasource = datasource;
 		if (datasource == null)
 			throw new ServiceLocatorException("Container Service not available");
-		// TODO 4 Initialize the dataSource in TODO 3 using ServiceLocator API
-		// TODO 5 If any error occur in getting this service then throw
-		// ServiceLocatorException
-		// with error message as 'Container Service not available'
+	}
+
+	public void setDatasource(DataSource datasource) {
+		this.datasource = datasource;
+		if (datasource == null)
+			throw new ServiceLocatorException("Container Service not available");
 	}
 
 	@Override
@@ -105,13 +111,12 @@ public class JDBCCarDAO implements CarDAO {
 				// Start the JDBC transaction
 				// Create a PreparedStatement using deleteQuery
 				PreparedStatement deleteStat = connection.prepareStatement(deleteQuery);
-				for(String id:ids)
-				{
+				for (String id : ids) {
 					deleteStat.setInt(1, Integer.parseInt(id));
 					deleteStat.execute();
 				}
 				// Set the parameters of the PreparedStatement
-				
+
 				// Invoke appropriate API of JDBC to update and commit the
 				// record
 				connection.commit();
@@ -141,7 +146,7 @@ public class JDBCCarDAO implements CarDAO {
 		// TODO Auto-generated method stub
 		String updateQuery = "update car set make=?,model=?,model_year=? where id=?";
 		Connection connection = null;
-		
+
 		try {
 			try {
 				// TODO 8
@@ -160,7 +165,7 @@ public class JDBCCarDAO implements CarDAO {
 				// Set the parameters of the PreparedStatement
 				// Invoke appropriate API of JDBC to update and commit the
 				// record
-				
+
 			} catch (SQLException e) {
 				if (connection != null)
 					connection.rollback();
@@ -192,8 +197,7 @@ public class JDBCCarDAO implements CarDAO {
 				connection = datasource.getConnection();
 				PreparedStatement selectStat = connection.prepareStatement(selectQuery);
 				rs = selectStat.executeQuery();
-				while(rs.next())
-				{
+				while (rs.next()) {
 					CarDTO car = new CarDTO();
 					car.setMake(rs.getString("MAKE"));
 					car.setModel(rs.getString("MODEL"));
@@ -238,8 +242,7 @@ public class JDBCCarDAO implements CarDAO {
 				PreparedStatement selectStatement = connection.prepareStatement(selectQuery);
 				selectStatement.setInt(1, id);
 				ResultSet result = selectStatement.executeQuery();
-				if(result.next())
-				{
+				if (result.next()) {
 					car.setId(result.getInt("id"));
 					car.setMake(result.getString("MAKE"));
 					car.setModel(result.getString("MODEL"));

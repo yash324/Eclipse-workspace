@@ -13,9 +13,9 @@ public class Employee {
 
 	public Employee() {
 		this.empid = -1;
-		this.name = "";
+	/*	this.name = "";
 		this.email = "";
-		this.address = "";
+		this.address = "";*/
 	}
 
 	public Employee(int empid, String name, String email, long phone, String dob, String doj, String address,

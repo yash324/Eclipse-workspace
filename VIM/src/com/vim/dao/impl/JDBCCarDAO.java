@@ -9,12 +9,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-
 import com.vim.dao.CarDAO;
 import com.vim.dto.CarDTO;
-import com.vim.util.ServiceLocator;
 import com.vim.util.ServiceLocatorException;
 
 //todos complete

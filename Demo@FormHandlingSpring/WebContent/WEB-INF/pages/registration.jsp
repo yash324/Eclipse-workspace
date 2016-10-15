@@ -18,7 +18,7 @@
                 </tr>
                 <tr>
                     <td>User Name:</td>
-                    <td><form:input path="username" /></td>
+                    <td><form:input path="username" pattern="[A-Za-z]+ [A-Za-z]+" oninvalid = "this.setCustomValidity('Format: First_Name Last_Name')"/></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
@@ -26,11 +26,11 @@
                 </tr>
                 <tr>
                     <td>E-mail:</td>
-                    <td><form:input path="email" /></td>
+                    <td><form:input type = "email" path="email" /></td>
                 </tr>
                 <tr>
                     <td>Birthday (mm/dd/yyyy):</td>
-                    <td><form:input path="birthDate" /></td>
+                    <td><form:input path="birthDate" pattern = "[0-9]{2}/[0-9]d{2}/[0-9]{4}" oninvalid = "this.setCustomValidity('Use mm/dd/yyyy only.')" /></td>
                 </tr>
                 <tr>
                     <td>Profession:</td>

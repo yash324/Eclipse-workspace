@@ -33,10 +33,8 @@ private UserDaoI userdao;
         professionList.add("Designer");
         professionList.add("IT Manager");
         model.put("professionList", professionList);
-         
-        
         System.out.println(model.getClass());
-//        return "redirect:registration";
+        model.put("userForm", dtoRef);
         return "registration";
     }
     
@@ -60,10 +58,10 @@ private UserDaoI userdao;
         return "success";
     }
     
-    @ModelAttribute("userForm")
+/*    @ModelAttribute("userForm")
     UserDTO createUser(){
     	System.out.println("TRYING TO CREATE AN ENTRY FOR A USER");
     	return dtoRef;
     }
-    
+    */
 }

@@ -4,56 +4,6 @@
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/commons-logging-1.2.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/log4j-1.2.17.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/spring-beans-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/spring-context-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/spring-core-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/spring-expression-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/spring-framework-bom-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/spring-web-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Demo@SpringMVC/lib/spring-webmvc-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.29.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -69,15 +19,18 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Dependencies/lib/spring-jdbc-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/VIM-Spring-JDBC-Template/libs/spring-tx-3.2.9.RELEASE.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/mysql-connector-java-5.1.29.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-beans-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-context-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-core-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-expression-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-framework-bom-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-jdbc-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-tx-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-web-3.2.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/EMS4/WebContent/WEB-INF/lib/spring-webmvc-3.2.9.RELEASE.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

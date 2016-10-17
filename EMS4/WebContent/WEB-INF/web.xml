@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app>
-  <display-name>Employee Management System</display-name>
-  <servlet>
-    <servlet-name>Controller</servlet-name>
-    <servlet-class>ControllerServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Controller</servlet-name>
-    <url-pattern>/controller/*</url-pattern>
-  </servlet-mapping>
-  <resource-ref>
-    <res-ref-name>jdbc/EMPDataSource</res-ref-name>
-    <res-type>javax.sql.DataSource</res-type>
-    <res-auth>Container</res-auth>
-    <res-sharing-scope>Shareable</res-sharing-scope>
-  </resource-ref>
-  <error-page>
-    <error-code>404</error-code>
-    <location>/WEB-INF/unavailable.jsp</location>
-  </error-page>
-  <error-page>
-    <error-code>500</error-code>
-    <location>/WEB-INF/unavailable.jsp</location>
-  </error-page>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+	<display-name>Employee Management System</display-name>
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+	</context-param>
+	<!-- <error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/pages/unavailable.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/pages/unavailable.jsp</location>
+	</error-page> -->
 </web-app>

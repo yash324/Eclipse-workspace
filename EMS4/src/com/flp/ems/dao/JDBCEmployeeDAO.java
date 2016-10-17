@@ -1,6 +1,7 @@
 package com.flp.ems.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,8 +18,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.flp.ems.domain.*;
-import com.flp.ems.util.ServiceLocator;
-import com.flp.ems.util.ServiceLocatorException;
 import com.flp.ems.dao.JDBCDaoException;
 
 @Repository("EMPRepository")
@@ -26,8 +25,7 @@ public class JDBCEmployeeDAO {
 
 	private DataSource datasource;
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-	DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-
+	
 	@Autowired
 	@Qualifier("EMSDataSource")
 	public void setDatasource(DataSource datasource) {
@@ -36,14 +34,14 @@ public class JDBCEmployeeDAO {
 	}
 
 	public void create(Employee emp) {
-		BeanPropertySqlParameterSource sqlParameterSource;
-		sqlParameterSource = new BeanPropertySqlParameterSource(emp);
+		BeanPropertySqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(emp);
 		String insertQuery = "INSERT INTO employee (name, email, phone, dob, doj, addr, deptid, projid, roleid) VALUES (:name , :email , :phone , :dob , :doj , :address , :deptid , :projid , :roleid)";
 		namedParameterJdbcTemplate.update(insertQuery, sqlParameterSource);
 	}
 
 	public ArrayList<Employee> findAll() {
-		ArrayList<Employee> empList = new ArrayList<Employee>();
+		String selectQuery = "Select * from employee";
+		ArrayList<Employee> empList = 
 		Connection connection = null;
 		String selectQuery = "select * from employee";
 		ResultSet result = null;
@@ -87,8 +85,8 @@ public class JDBCEmployeeDAO {
 				updateStat.setString(1, emp.getName());
 				updateStat.setString(2, emp.getEmail());
 				updateStat.setLong(3, emp.getPhone());
-				updateStat.setDate(4, new java.sql.Date(df.parse(emp.getDob()).getTime()));
-				updateStat.setDate(5, new java.sql.Date(df.parse(emp.getDoj()).getTime()));
+				updateStat.setDate(4, (Date) emp.getDob());
+				updateStat.setDate(5, (Date) emp.getDoj());
 				updateStat.setString(6, emp.getAddress());
 				updateStat.setInt(7, emp.getDeptid());
 				updateStat.setInt(8, emp.getProjid());

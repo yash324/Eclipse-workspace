@@ -14,20 +14,6 @@ public class Employee {
 		this.empid = -1;
 	}
 
-	public Employee(int empid, String name, String email, long phone, String dob, String doj, String address,
-			int deptid, int projid, int roleid) {
-		this.empid = empid;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-		this.setDob(dob);
-		this.setDoj(doj);
-		this.address = address;
-		this.deptid = deptid;
-		this.projid = projid;
-		this.roleid = roleid;
-	}
-
 	@Override
 	public boolean equals(Object obj) {
 		return this.email.equals(((Employee) obj).email);
@@ -43,18 +29,12 @@ public class Employee {
 		return deptid;
 	}
 
-	public String getDob() {
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		if (this.dob == null)
-			return "";
-		return df.format(this.dob);
+	public Date getDob() {
+		return this.dob;
 	}
 
-	public String getDoj() {
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		if (this.doj == null)
-			return "";
-		return df.format(this.doj);
+	public Date getDoj() {
+		return this.doj;
 	}
 
 	public String getEmail() {
@@ -102,28 +82,8 @@ public class Employee {
 		this.dob = dob;
 	}
 
-	public void setDob(String dob) {
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			this.dob = df.parse(dob);
-		} catch (ParseException e) {
-			System.out.println("Invalid Date");
-			e.printStackTrace();
-		}
-	}
-
 	public void setDoj(Date doj) {
 		this.doj = doj;
-	}
-
-	public void setDoj(String doj) {
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			this.doj = df.parse(doj);
-		} catch (ParseException e) {
-			System.out.println("Invalid Date");
-			e.printStackTrace();
-		}
 	}
 
 	public void setEmail(String email) {

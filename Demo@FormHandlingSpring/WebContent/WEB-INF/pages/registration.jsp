@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                     <td>Birthday (mm/dd/yyyy):</td>
-                    <td><form:input path="birthDate" pattern = "[0-9]{2}/[0-9]d{2}/[0-9]{4}" oninvalid = "this.setCustomValidity('Use mm/dd/yyyy only.')" /></td>
+                    <td><form:input path="birthDate" pattern = "[0-9]{2}/[0-9]{2}/[0-9]{4}" oninvalid = "this.setCustomValidity('Use mm/dd/yyyy only.')" /></td>
                 </tr>
                 <tr>
                     <td>Profession:</td>

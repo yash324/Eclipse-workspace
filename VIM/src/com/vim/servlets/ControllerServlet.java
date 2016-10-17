@@ -66,7 +66,7 @@ public class ControllerServlet extends HttpServlet {
 		String actionName = request.getParameter(ACTION_KEY);
 		String destinationPage = null;
 		WebApplicationContext appContext = WebApplicationContextUtils
-				.getRequiredWebApplicationContext(request.getSession().getServletContext());
+				.getRequiredWebApplicationContext(getServletContext());
 		CarDAO carDAO = appContext.getBean("myJDBCDAO", JDBCCarDAO.class);
 		List<CarDTO> carList;
 		// perform action
